@@ -1,0 +1,67 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title>Stickman</title>
+</head>
+
+<body>
+    <div>
+    <canvas id="canvas" width="400px" height="300px" >
+        Your browser does not support HTML5 Canvas element
+    </canvas>
+    </div>
+
+    <script>
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext("2d")) { // Check HTML5 canvas support
+    context = canvas.getContext("2d"); // get Canvas Context object
+
+    context.beginPath();
+    context.fillStyle = "black"; // #ffe4c4
+    context.arc(200, 50, 30, 0, Math.PI * 2, true); // draw circle for head
+    context.fill();
+
+    context.beginPath();
+    context.strokeStyle = "black"; // color
+    context.lineWidth = 3;
+    context.arc(200, 50, 20, 0, Math.PI, false); // draw semicircle for smiling
+    context.stroke();
+
+    // eyes
+    context.beginPath();
+    context.fillStyle = "black"; // color
+    context.arc(190, 45, 3, 0, Math.PI * 2, true); // draw left eye
+    context.fill();
+    context.arc(210, 45, 3, 0, Math.PI * 2, true); // draw right eye
+    context.fill();
+
+    // body
+    context.beginPath();
+    context.moveTo(200, 80);
+    context.lineTo(200, 180);
+    context.strokeStyle = "black";
+    context.stroke();
+
+    // arms
+    context.beginPath();
+    context.strokeStyle = "black"; // blue
+    context.moveTo(200, 80);
+    context.lineTo(150, 130);
+    context.moveTo(200, 80);
+    context.lineTo(250, 130);
+    context.stroke();
+
+    // legs
+    context.beginPath();
+    context.strokeStyle = "black";
+    context.moveTo(200, 180);
+    context.lineTo(150, 280);
+    context.moveTo(200, 180);
+    context.lineTo(250, 280);
+    context.stroke();
+}
+
+</script>
+
+</body>
+</html>
